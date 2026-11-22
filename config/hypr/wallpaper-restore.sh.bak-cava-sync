@@ -1,0 +1,15 @@
+#!/bin/bash
+# Login wallpaper restore: re-set the chosen wallpaper (permanent until changed).
+sleep 1
+MODE_FILE="$HOME/.cache/wallpaper-mode.txt"
+mode="$(cat "$MODE_FILE" 2>/dev/null)"
+
+if [ -f "$mode" ]; then
+  awww img "$mode" --transition-type none
+  python3 "$HOME/.config/hypr/wallpaper-to-cava.py" "$mode" >/dev/null 2>&1 || true
+else
+  awww restore 2>/dev/null || true
+  # sync cava to whatever awww restored (query current image)
+  cur="$(awww query 2>/dev/null | grep -oP 'image:\s*\K.*' | head -n1)"
+  [ -f "$cur" ] && python3 "$HOME/.config/hypr/wallpaper-to-cava.py" "$cur" >/dev/null 2>&1 || true
+fi

@@ -1,0 +1,27 @@
+* {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: white;
+}
+
+window#waybar {
+    background: #111111;
+}
+
+#clock,
+#network,
+#battery {
+    background: #222222;
+    border-radius: 12px;
+    padding: 8px 18px;
+    margin: 4px;
+}
+
+#clock {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#battery {
+    font-weight: bold;
+}

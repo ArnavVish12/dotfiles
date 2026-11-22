@@ -1,0 +1,28 @@
+{
+    "layer": "top",
+    "position": "top",
+
+    "modules-center": ["clock"],
+    "modules-right": ["network", "battery"],
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "WiFi {essid}",
+        "format-ethernet": "Ethernet",
+        "format-disconnected": "Offline"
+    },
+
+    "battery": {
+        "format": "🔋 {capacity}%",
+        "format-charging": "⚡ {capacity}%",
+        "format-full": "🔋 {capacity}%",
+        "format-plugged": "⚡ {capacity}%",
+        "tooltip": true,
+        "tooltip-format": "Battery: {capacity}%"
+    }
+}
+

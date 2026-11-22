@@ -1,0 +1,29 @@
+{
+    "layer": "top",
+    "position": "top",
+
+    "modules-left": [],
+    "modules-center": ["custom/clock"],
+    "modules-right": ["network", "battery"],
+
+    "custom/clock": {
+        "exec": "~/.config/waybar/clock.sh",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "󰤨  {essid}",
+        "format-ethernet": "󰈀  Ethernet",
+        "format-disconnected": "󰤭  Offline",
+        "tooltip-format": "{essid} | {ipaddr}"
+    },
+
+    "battery": {
+        "format": "󰁹  {capacity}%",
+        "format-charging": "󰂄  {capacity}% ⚡",
+        "format-plugged": "󰂄  {capacity}% ⚡",
+        "format-full": "󰁹  {capacity}%",
+        "tooltip-format": "{capacity}% | {time}"
+    }
+}
